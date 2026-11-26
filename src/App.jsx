@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-//import {
+import {
   ArrowRight,
   Check,
   FileText,
