@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //import {
   ArrowRight,
   Check,
@@ -283,3 +284,20 @@ function App() {
 }
 
 export default App;
+=======
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+>>>>>>> eaf2ca42af5bbc7a5ae2ec65631e0b610f4e1856
