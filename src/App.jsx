@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   ArrowRight,
   Check,
@@ -12,7 +11,9 @@ import {
   Menu,
   X,
   ShieldCheck,
-  BriefcaseBusiness
+  BriefcaseBusiness,
+  BarChart3,
+  FileCheck2,
 } from 'lucide-react';
 
 import { useState } from 'react';
@@ -24,53 +25,53 @@ function App() {
   const features = [
     {
       icon: Target,
-      title: 'Resume Fit Score',
+      title: 'Fit score for every job',
       description:
-        'Get a clear percentage score showing how well your resume matches a job opening.'
+        'One clear percentage for each opening, based on how your skills line up with what the role asks for.',
     },
     {
-      icon: Search,
-      title: 'Missing Skills Analysis',
+      icon: BarChart3,
+      title: 'Skill gap analysis',
       description:
-        'Identify the important skills missing from your resume for your target role.'
+        'See which skills appear in your target role but are missing from your resume.',
     },
     {
-      icon: Lightbulb,
-      title: 'Smart Suggestions',
+      icon: FileCheck2,
+      title: 'Resume suggestions',
       description:
-        'Get practical suggestions to improve your resume and increase your chances.'
-    }
+        'Get specific ideas that would make your resume stronger for the role you want.',
+    },
   ];
 
   const steps = [
     {
       number: '01',
-      icon: Upload,
-      title: 'Upload Your Resume',
-      description: 'Add your resume and choose your target job role.'
+      title: 'Upload your resume',
+      description:
+        'Drop in a PDF or DOCX. No forms to fill, no experience to re-enter.',
     },
     {
       number: '02',
-      icon: Target,
-      title: 'Get Your Fit Score',
-      description: 'Understand how closely your profile matches the job.'
+      title: 'AI reads your profile',
+      description:
+        'CareerFit extracts your skills, projects and experience and compares them with each job description.',
     },
     {
       number: '03',
-      icon: TrendingUp,
-      title: 'Improve Your Resume',
-      description: 'Discover skill gaps and get suggestions for improvement.'
-    }
+      title: 'Get ranked matches',
+      description:
+        'See every opening ordered by fit score, with the reason behind each match.',
+    },
   ];
 
   return (
     <div className="app">
 
-      {/* Navbar */}
+      {/* NAVBAR */}
       <nav className="navbar">
         <a href="#home" className="logo">
           <span className="logo-icon">
-            <BriefcaseBusiness size={21} />
+            <BriefcaseBusiness size={18} />
           </span>
           CareerFit
         </a>
@@ -80,127 +81,216 @@ function App() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
         >
-          {menuOpen ? <X /> : <Menu />}
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
 
         <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
-          <a href="#how-it-works" onClick={() => setMenuOpen(false)}>How it works</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#how-it-works" onClick={() => setMenuOpen(false)}>
+            How it works
+          </a>
+
+          <a href="#features" onClick={() => setMenuOpen(false)}>
+            Features
+          </a>
+
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
         </div>
 
         <div className="nav-actions">
-          <a href="/login" className="login-btn">Log in</a>
-          <a href="/signup" className="signup-btn">Get Started <ArrowRight size={16} /></a>
+          <a href="/login" className="login-btn">
+            Log in
+          </a>
+
+          <a href="/signup" className="signup-btn">
+            Get started
+          </a>
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* HERO */}
       <section className="hero" id="home">
         <div className="hero-content">
+
           <div className="eyebrow">
-            <Sparkles size={15} />
-            SMARTER RESUME MATCHING
+            <Sparkles size={13} />
+            AI-POWERED RESUME AND JOB MATCHING
           </div>
 
           <h1>
-            Your resume,
+            Know how well
             <br />
-            <span>scored against</span>
+            you <span>fit the job</span>
             <br />
-            every job.
+            before you apply.
           </h1>
 
           <p className="hero-description">
-            Stop guessing if your resume is good enough.
-            Discover your job fit score, identify missing skills,
-            and make every application count.
+            Upload your resume once. CareerFit reads your skills,
+            scores you against every opening, and shows exactly
+            what is missing for the roles you want.
           </p>
 
           <div className="hero-buttons">
             <a href="/signup" className="primary-btn">
-              Get Started Free <ArrowRight size={18} />
+              Upload your resume
+              <ArrowRight size={17} />
             </a>
+
             <a href="#how-it-works" className="secondary-btn">
-              Explore Features
+              See how it works
             </a>
           </div>
 
           <div className="hero-trust">
-            <span><Check size={16} /> Easy to use</span>
-            <span><Check size={16} /> Actionable insights</span>
-            <span><Check size={16} /> Career focused</span>
+            <span>
+              <Check size={14} />
+              No manual forms
+            </span>
+
+            <span>
+              <Check size={14} />
+              Instant fit score
+            </span>
+
+            <span>
+              <Check size={14} />
+              Actionable insights
+            </span>
           </div>
         </div>
 
-        {/* Sample Score Card */}
+        {/* JOB MATCH CARD */}
         <div className="hero-visual">
+
           <div className="score-card">
+
             <div className="score-header">
               <div>
-                <span className="small-label">YOUR RESUME ANALYSIS</span>
-                <h3>Job Match Overview</h3>
-              </div>
-              <span className="status-dot"></span>
-            </div>
+                <span className="small-label">
+                  SAMPLE RESULT
+                </span>
 
-            <div className="score-main">
-              <div className="score-circle">
-                <div className="score-inner">
-                  <strong>85%</strong>
-                  <span>Match score</span>
-                </div>
+                <h3>Backend Developer</h3>
+
+                <span className="company-name">
+                  Northwind Labs · Bengaluru
+                </span>
               </div>
-              <div className="score-info">
-                <span className="good-tag">Excellent Match</span>
-                <h4>Frontend Developer</h4>
-                <p>Your resume matches most of the job requirements.</p>
+
+              <div className="match-score">
+                <strong>86%</strong>
+                <span>fit score</span>
               </div>
             </div>
 
-            <div className="score-divider"></div>
-
-            <h4 className="skills-heading">Skills Overview</h4>
-
-            <div className="skill-row">
-              <span>JavaScript</span>
-              <span className="skill-status"><Check size={14} /> Matched</span>
+            <div className="score-progress">
+              <span></span>
             </div>
-            <div className="skill-row">
-              <span>HTML & CSS</span>
-              <span className="skill-status"><Check size={14} /> Matched</span>
+
+            <div className="skills-section">
+              <span className="small-label">
+                SKILLS YOU ALREADY HAVE
+              </span>
+
+              <div className="skill-tags">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>SQL</span>
+                <span>REST APIs</span>
+                <span>Git</span>
+              </div>
             </div>
-            <div className="skill-row">
-              <span>React.js</span>
-              <span className="missing-status">Missing</span>
+
+            <div className="skills-section missing-skills">
+              <span className="small-label">
+                SKILLS TO ADD
+              </span>
+
+              <div className="skill-tags">
+                <span>Docker</span>
+                <span>Redis</span>
+              </div>
             </div>
 
             <div className="suggestion-box">
-              <Lightbulb size={19} />
+              <Lightbulb size={17} />
+
               <div>
-                <strong>Improvement tip</strong>
-                <p>Consider adding React.js to your skill set.</p>
+                <strong>Why this score?</strong>
+
+                <p>
+                  Your backend experience is a strong match.
+                  Adding Docker and Redis could improve your fit.
+                </p>
               </div>
             </div>
           </div>
 
           <div className="floating-badge">
-            <TrendingUp size={19} />
+            <TrendingUp size={18} />
+
             <div>
-              <strong>Better Preparation</strong>
-              <span>Know your skill gaps</span>
+              <strong>Strong match</strong>
+              <span>Ready to apply</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="features section" id="features">
+      {/* HOW IT WORKS */}
+      <section
+        className="how-section section"
+        id="how-it-works"
+      >
+        <div className="section-heading dark-heading">
+          <span className="section-label">
+            HOW IT WORKS
+          </span>
+
+          <h2>
+            Three steps from resume to shortlist
+          </h2>
+        </div>
+
+        <div className="steps-grid">
+          {steps.map((step, index) => (
+            <div className="step-card" key={index}>
+
+              <div className="step-number">
+                {step.number}
+              </div>
+
+              <h3>{step.title}</h3>
+
+              <p>{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section
+        className="features section"
+        id="features"
+      >
         <div className="section-heading">
-          <span className="section-label">WHAT WE OFFER</span>
-          <h2>Everything you need to <span>stand out</span></h2>
-          <p>Make smarter career decisions with useful resume insights.</p>
+
+          <span className="section-label">
+            SMARTER JOB SEARCH
+          </span>
+
+          <h2>
+            Stop guessing which jobs are
+            <br />
+            <span>worth your time</span>
+          </h2>
+
+          <p>
+            Every match comes with an explanation, so you know
+            what to apply for today and what to learn next.
+          </p>
         </div>
 
         <div className="feature-grid">
@@ -209,13 +299,18 @@ function App() {
 
             return (
               <div className="feature-card" key={index}>
+
                 <div className="feature-icon">
-                  <Icon size={25} />
+                  <Icon size={21} />
                 </div>
+
                 <h3>{feature.title}</h3>
+
                 <p>{feature.description}</p>
+
                 <a href="/signup">
-                  Learn more <ArrowRight size={15} />
+                  Learn more
+                  <ArrowRight size={14} />
                 </a>
               </div>
             );
@@ -223,60 +318,84 @@ function App() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="how-section section" id="how-it-works">
-        <div className="section-heading">
-          <span className="section-label">SIMPLE PROCESS</span>
-          <h2>How <span>CareerFit</span> works</h2>
-          <p>Three simple steps to understand your job readiness.</p>
-        </div>
+      {/* RESUME ANALYSIS STRIP */}
+      <section className="analysis-section">
+        <div className="analysis-content">
 
-        <div className="steps-grid">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+          <div className="analysis-icon">
+            <FileText size={24} />
+          </div>
 
-            return (
-              <div className="step-card" key={index}>
-                <div className="step-top">
-                  <span>{step.number}</span>
-                  <Icon size={25} />
-                </div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            );
-          })}
+          <div>
+            <span className="section-label">
+              BUILT FOR YOUR CAREER
+            </span>
+
+            <h2>
+              Know what to improve before
+              you send your next application.
+            </h2>
+
+            <p>
+              CareerFit turns your resume into useful,
+              job-specific insights instead of generic advice.
+            </p>
+          </div>
+
+          <a href="/signup" className="primary-btn">
+            Analyze my resume
+            <ArrowRight size={17} />
+          </a>
         </div>
       </section>
 
       {/* CTA */}
       <section className="cta-section" id="about">
-        <div>
-          <span className="section-label">YOUR NEXT CAREER MOVE</span>
-          <h2>Ready to make your resume job-ready?</h2>
-          <p>Start understanding your strengths and improve your job applications.</p>
+
+        <div className="cta-content">
+
+          <span className="section-label">
+            YOUR NEXT CAREER MOVE
+          </span>
+
+          <h2>
+            Make every application count.
+          </h2>
+
+          <p>
+            Find the right roles, understand your gaps,
+            and apply with confidence.
+          </p>
+
           <a href="/signup" className="primary-btn">
-            Create Free Account <ArrowRight size={18} />
+            Get started free
+            <ArrowRight size={17} />
           </a>
         </div>
+
         <div className="cta-icon">
-          <FileText size={75} />
-          <ShieldCheck size={35} />
+          <ShieldCheck size={72} strokeWidth={1.2} />
         </div>
       </section>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer className="footer">
+
         <a href="#home" className="logo">
           <span className="logo-icon">
-            <BriefcaseBusiness size={20} />
+            <BriefcaseBusiness size={17} />
           </span>
           CareerFit
         </a>
 
-        <p>Make every application count.</p>
+        <p>
+          Make every application count.
+        </p>
 
-        <span>© 2026 CareerFit. All rights reserved.</span>
+        <span>
+          © 2026 CareerFit. All rights reserved.
+        </span>
+
       </footer>
 
     </div>
@@ -284,20 +403,5 @@ function App() {
 }
 
 export default App;
-=======
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;
->>>>>>> eaf2ca42af5bbc7a5ae2ec65631e0b610f4e1856

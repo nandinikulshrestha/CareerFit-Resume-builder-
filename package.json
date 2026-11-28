@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@tailwindcss/cli": "^4.3.5",
     "lucide-react": "^1.78.0",
     "react": "^19.3.1",
@@ -20,14 +19,6 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.5",
-=======
-    "lucide-react": "^1.73.0",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "react-router-dom": "^7.18.5"
-  },
-  "devDependencies": {
->>>>>>> eaf2ca42af5bbc7a5ae2ec65631e0b610f4e1856
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
